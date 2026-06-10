@@ -8,6 +8,8 @@ defmodule Ecohabits.Accounts.User do
     field :bio, :string
     field :points, :integer, default: 0
 
+    has_many :habits, Ecohabits.Habits.Habit
+
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :confirmed_at, :utc_datetime

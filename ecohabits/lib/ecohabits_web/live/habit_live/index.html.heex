@@ -1,0 +1,102 @@
+<div class="max-w-5xl mx-auto">
+
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">
+      Hábitos Sustentáveis
+    </h1>
+
+    <.link
+      navigate={~p"/habits/new"}
+      class="bg-green-600 text-white px-4 py-2 rounded">
+      Novo Hábito
+    </.link>
+  </div>
+
+  <div class="mb-6">
+    <form phx-change="filter">
+      <label class="font-semibold">
+        Filtrar por categoria
+      </label>
+
+      <select
+        name="category"
+        class="border rounded p-2 ml-2">
+
+        <option value="">
+          Todos
+        </option>
+
+        <%= for category <- @categories do %>
+          <option
+            value={category}
+            selected={@selected_category == category}>
+            <%= category %>
+          </option>
+        <% end %>
+
+      </select>
+    </form>
+  </div>
+
+  <table class="table-auto w-full border border-gray-300">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border p-2">Nome</th>
+        <th class="border p-2">Descrição</th>
+        <th class="border p-2">Categoria</th>
+        <th class="border p-2">Pontuação</th>
+        <th class="border p-2">Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= for habit <- @habits do %>
+        <tr>
+          <td class="border p-2">
+            <%= habit.name %>
+          </td>
+
+          <td class="border p-2">
+            <%= habit.description %>
+          </td>
+
+          <td class="border p-2">
+            <%= habit.category %>
+          </td>
+
+          <td class="border p-2">
+            <%= habit.score %>
+          </td>
+
+          <td class="border p-2">
+
+            <.link
+              navigate={~p"/habits/#{habit.id}/edit"}
+              class="text-blue-600 hover:underline mr-4">
+              Editar
+            </.link>
+
+            <button
+              type="button"
+              phx-click="delete"
+              phx-value-id={habit.id}
+              onclick="return confirm('Deseja realmente excluir este hábito?')"
+              class="text-red-600 hover:underline">
+              Excluir
+            </button>
+
+          </td>
+        </tr>
+      <% end %>
+
+      <%= if Enum.empty?(@habits) do %>
+        <tr>
+          <td colspan="5" class="text-center p-4">
+            Nenhum hábito encontrado.
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,53 @@
+<div class="max-w-2xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">
+    <%= @page_title %>
+  </h1>
+
+  <.form
+    for={@form}
+    phx-change="validate"
+    phx-submit="save">
+
+    <div class="mb-4">
+      <label>Nome</label>
+      <.input
+        field={@form[:name]}
+        type="text"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label>Descrição</label>
+      <.input
+        field={@form[:description]}
+        type="textarea"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label>Categoria</label>
+
+      <.input
+        field={@form[:category]}
+        type="select"
+        options={Enum.map(@categories, &{&1, &1})}
+      />
+    </div>
+
+    <div class="mb-4">
+      <label>Pontuação</label>
+
+      <.input
+        field={@form[:score]}
+        type="number"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="bg-green-600 text-white px-4 py-2 rounded">
+      Salvar
+    </button>
+
+  </.form>
+</div>
