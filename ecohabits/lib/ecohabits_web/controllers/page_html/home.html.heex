@@ -1,82 +1,98 @@
-<Layouts.flash_group flash={@flash} />
-<div class="left-[40rem] fixed inset-y-0 right-0 z-0 hidden lg:block xl:left-[50rem]">
- <Layouts.flash_group flash={@flash} />
+<section class="relative bg-[#101318] py-16 lg:py-12">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 h-auto mt-24 mb-10">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<div>
+				<h1
+					class="text-4xl font-extrabold sm:text-5xl tracking-tight text-white"
+				>
+					Transforme pequenas ações em
+					<div class="flex">
+						<span class="text-green-400">grandes</span>
+						<span class="text-green-600 ml-2">impactos</span>
+					</div>
+				</h1>
 
-  <div class="flex min-h-screen">
+				<p class="mt-6 text-lg text-gray-300">
+					O EcoHabits ajuda você a desenvolver hábitos sustentáveis no dia a
+					dia, acompanhar sua evolução e contribuir para um futuro mais
+					consciente. Registre suas ações ecológicas, acumule pontos e acompanhe
+					seu progresso.
+				</p>
 
-    <div class="flex flex-col justify-center items-center w-full bg-[#101318] p-20">
-      <div className="flex flex-col justify-center items-center bg-gradient-to-br from from-red-800 to-purple-800 h-screen w-1/2 ">
-        <div className="flex flex-col items-center text-center max-w-md">
-          
-          <h2 className="mt-10 m-2 font-extrabold text-white text-7xl">
-            FitCrowd
-          </h2>
-          <p className="text-2xl text-white">
-            Onde sua jornada fitness encontra a comunidade
-          </p>
-        </div>
-      </div>
+				<div class="flex gap-4 mt-10">
+					<a
+						href="/users/register"
+						class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold transition"
+					>
+						Criar sua conta
+					</a>
 
-      <.form
-        for={%{}}
-        action={~p"/users/log-in"}
-        class="w-full max-w-md"
-      >
+					<a
+						href="/users/log-in"
+						class="px-6 py-3 border border-green-500 text-green-400 hover:bg-green-500 hover:text-white rounded-xl font-semibold transition"
+					>
+						Entrar na sua conta
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-        <h2 class="text-white text-4xl font-bold mb-3">
-          Bem-vindo, aluno!
-        </h2>
+<section
+	id="about"
+	class="relative h-auto flex flex-col items-center justify-start bg-gray-50"
+>
+	<div class="max-w-7xl w-full mx-auto mt-24 px-4 sm:px-6 lg:px-8">
+		<div class="flex flex-col text-center justify-center">
+			<h2 class="text-sm mb-3 mt-2 font-bold tracking-widest text-green-600">
+				SOBRE O ECOHABITS
+			</h2>
 
-        <p class="text-gray-400 text-base">
-          Entre para começar sua evolução.
-        </p>
+			<h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+				Tecnologia e sustentabilidade
+			</h2>
 
-        <label class="block text-white mb-3 mt-10">
-          Email:
-        </label>
+			<h2 class="text-3xl lg:text-4xl mb-5 font-bold text-gray-900">
+				trabalhando juntas para mudar hábitos.
+			</h2>
+		</div>
+	</div>
 
-        <input
-          type="email"
-          name="user[email]"
-          placeholder="Insira seu email..."
-          class="w-full mb-6 px-4 py-3 rounded-xl bg-[#191d24] border border-[#2b303b] text-white placeholder-gray-300 focus:ring-2 focus:ring-red-500"
-          required
-        />
+	<div class="relative z-10 mt-14 mb-24">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+			<div class="bg-white rounded-2xl shadow-lg p-8">
+				<h3 class="text-xl font-bold text-green-600 mb-4">
+					O que é o EcoHabits?
+				</h3>
 
-        <label class="block text-white mb-3">
-          Senha:
-        </label>
+				<p class="text-gray-600 leading-relaxed">
+					O EcoHabits é uma plataforma que incentiva a adoção de hábitos
+					sustentáveis por meio do registro diário de ações ecológicas. O
+					objetivo é transformar pequenas atitudes em mudanças significativas
+					para o meio ambiente.
+				</p>
+			</div>
 
-        <input
-          type="password"
-          name="user[password]"
-          placeholder="Insira sua senha..."
-          class="w-full rounded-xl mb-10 px-4 py-3 bg-[#191d24] border border-[#2b303b] text-white placeholder-gray-300"
-          required
-        />
+			<div class="bg-white rounded-2xl shadow-lg p-8">
+				<h3 class="text-xl font-bold text-green-600 mb-4">Como funciona?</h3>
 
-        <button
-          type="submit"
-          name="user[remember_me]"
-          value="true"
-          class="w-full text-white bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-800 py-3 rounded-xl font-semibold"
-        >
-          Começar sua mudança
-        </button>
+				<p class="text-gray-600 leading-relaxed">
+					O usuário realiza check-ins diários para registrar hábitos
+					sustentáveis. Cada ação registrada contribui para sua pontuação e
+					permite acompanhar sua evolução ao longo do tempo.
+				</p>
+			</div>
 
-        <div class="text-center flex justify-center items-center mt-8 gap-2">
-          <p class="text-gray-400">
-            Não possui uma conta? 
-          </p>
+			<div class="bg-white rounded-2xl shadow-lg p-8">
+				<h3 class="text-xl font-bold text-green-600 mb-4">Por que utilizar?</h3>
 
-          <a
-            href="/users/register"
-            class="text-green-500 hover:text-green-600 font-semibold"
-          >
-            Criar conta
-          </a>
-        </div>
-      </.form>
-    </div>
-  </div>
-</div>
+				<p class="text-gray-600 leading-relaxed">
+					Além de incentivar mudanças positivas no cotidiano, o EcoHabits ajuda
+					o usuário a visualizar seu impacto ambiental e construir uma rotina
+					mais consciente de forma simples e motivadora.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
